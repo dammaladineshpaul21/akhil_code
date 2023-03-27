@@ -6,7 +6,7 @@
 # ______________________________________________________________________________________________________________
 
 # After two user input's it should as the new user to contiue or to exit
-# Add a new changes
+# Generate the OPT once user is created and ask the same after the passowrd entry
 
 user_name = []
 Id_password = []
