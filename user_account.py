@@ -21,6 +21,9 @@ for i in (range(3)):
 				if len(pswd) >= 8:  
 					if pswd.isalpha() == pswd.isnumeric(): 
 						Id_password.append(pswd)
+						get_user_status = input("Do you want to contiue still = ")
+						if get_user_status.lower() == "no":
+							break
 					else:
 						print("password contain atleast one letter and number")
 				else:
