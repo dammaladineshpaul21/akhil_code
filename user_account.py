@@ -14,8 +14,8 @@ import random
 user_name = []
 Id_password = []
 
-i = 1
-while i<=2:
+i = True
+while i:
 	Ldap = input("enter username = ")
 	if len(Ldap) >= 8:
 		if Ldap.isalpha() == Ldap.isnumeric():
@@ -31,8 +31,7 @@ while i<=2:
 							Id_password.append(pswd)
 							get_user_status = input("Do you want to contiue still (yes/no) = ")
 							if get_user_status.lower() == "no":
-								break
-							i = i+1
+								i = False
 						else:
 							print("Invalid OTP")
 					else:
