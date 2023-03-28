@@ -5,8 +5,9 @@
 # final out should be equal to the number of user in a list and smae lenght of password in Dict combination
 # ______________________________________________________________________________________________________________
 
-# After two user input's it should as the new user to contiue or to exit
-# Generate the OPT once user is created and ask the same after the passowrd entry
+# After two user input's it should as the new user to contiue or to exit (Done)
+# Generate the OPT once user is created and ask the same after the passowrd entry(Done)
+# Update the while loop infinity time
 
 import random
 
