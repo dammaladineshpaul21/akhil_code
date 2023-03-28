@@ -32,15 +32,17 @@ while start_loop:
 						new_get_status = input("New_User Do you want to continue still Yes/No = ")
 						if new_get_status.lower() == "no":
 							start_loop = False
+							user_account_dict = dict(zip(user_id, password))
+                            print(user_account_dict)
 							break
-						get_status = input(f"{get_ldap} Do you want to continue still Yes/No = ")
-						if get_status.lower() == "no":
-							start_loop = False
-							print("We say sorry to missing you".upper())
 					else:
 						print("Invalid OTP")
 				else:
 					print("password policy one letter, number, Special Chareate".upper())
+					get_status = input(f"{get_ldap} Do you want to continue still Yes/No = ")
+					if get_status.lower() == "no":
+						start_loop = False
+							print("We say sorry to missing you".upper())
 		else:
 			print(f"user_id should have condination of letter and number {get_ldap}")
 			get_status = input(f"{get_ldap} Do you want to continue still Yes/No = ")
@@ -49,8 +51,5 @@ while start_loop:
 				print("We say sorry to missing you".upper())
 	else:
 		print(f"{user_id} already taken, Try with newone")
-
-print(user_id)
-print(password)
 
 
