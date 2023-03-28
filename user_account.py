@@ -24,21 +24,24 @@ while i:
 				user_name.append(Ldap)
 				random_number = random.randint(1000,9999)
 				print(f"{Ldap} your OTP is {random_number}")
-				pswd = input("enter password = ")
-				if len(pswd) >= 8:  
-					if pswd.isalpha() == pswd.isnumeric():
-						Ldap_OTP = int(input(f"enter the {Ldap} OTP = "))
-						if random_number == Ldap_OTP:
-							Id_password.append(pswd)
-							get_user_status = input("Do you want to contiue still (yes/no) = ")
-							if get_user_status.lower() == "no":
-								i = False
+				j = True
+				while j:
+					pswd = input("enter password = ")
+					if len(pswd) >= 8:  
+						if pswd.isalpha() == pswd.isnumeric():
+							Ldap_OTP = int(input(f"enter the {Ldap} OTP = "))
+							if random_number == Ldap_OTP:
+								j = False
+								Id_password.append(pswd)
+								get_user_status = input("Do you want to contiue still (yes/no) = ")
+								if get_user_status.lower() == "no":
+									i = False
+							else:
+								print("Invalid OTP")
 						else:
-							print("Invalid OTP")
+							print("password contain atleast one letter and number")
 					else:
-						print("password contain atleast one letter and number")
-				else:
-					print("password should be greater than 8 letters along with atleast one letter and number")
+						print("password should be greater than 8 letters along with atleast one letter and number")
 			else:
 				print("username is already exist")
 		else:
