@@ -8,6 +8,7 @@
 # After two user input's it should as the new user to contiue or to exit (Done)
 # Generate the OPT once user is created and ask the same after the passowrd entry(Done)
 # Update the while loop infinity time
+# Add a loop for password till it matche's and then after it should go to password list
 
 import random
 
