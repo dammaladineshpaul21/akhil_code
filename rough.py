@@ -19,3 +19,14 @@
 
 
 # print(check_user_pass("Dammala4019", "adchd345"))
+
+def custom_append(lst, item):
+    """
+    This function takes a list and an item as input and adds the item to the end of the list.
+    """
+    lst[len(lst):] = [item]
+
+
+ my_list = [1, 2]
+ custom_append(my_list, 3)
+ print(my_list)
