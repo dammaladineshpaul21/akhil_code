@@ -7,8 +7,8 @@
 
 # After two user input's it should as the new user to contiue or to exit (Done)
 # Generate the OPT once user is created and ask the same after the passowrd entry(Done)
-# Update the while loop infinity time
-# Add a loop for password till it matche's and then after it should go to password list
+# Update the while loop infinity time (Done)
+# Add a loop for password till it matche's and then after it should go to password list (Done)
 
 import random
 
@@ -24,21 +24,36 @@ while i:
 				user_name.append(Ldap)
 				random_number = random.randint(1000,9999)
 				print(f"{Ldap} your OTP is {random_number}")
-				pswd = input("enter password = ")
-				if len(pswd) >= 8:  
-					if pswd.isalpha() == pswd.isnumeric():
-						Ldap_OTP = int(input(f"enter the {Ldap} OTP = "))
-						if random_number == Ldap_OTP:
-							Id_password.append(pswd)
-							get_user_status = input("Do you want to contiue still (yes/no) = ")
-							if get_user_status.lower() == "no":
-								i = False
+				
+				while True:
+					pswd = input("enter password = ")
+					if len(pswd) >= 8:  
+						if pswd.isalpha() == pswd.isnumeric():
+							Ldap_OTP = int(input(f"enter the {Ldap} OTP = "))
+							if random_number == Ldap_OTP:
+								count = 0
+								for i in range(len(set(Ldap))):
+									if list(set(Ldap))[i] in pswd:
+										count = count + 1
+								if count < len(set(Ldap)):
+									Id_password.append(pswd)
+									run_loop_again = input("New_User you want to contiue still (yes/no) = ")
+									if run_loop_again.lower() == "no":
+										i = False
+										break
+									break
+								else:
+									print("password should not match with half of username letters")
+									get_user_status = input(f"{Ldap} you want to contiue still (yes/no) = ")
+									if get_user_status.lower() == "no":
+										break
+									print(f"{count} are same as in {Ldap}")
+							else:
+								print("Invalid OTP")
 						else:
-							print("Invalid OTP")
+							print("password contain atleast one letter and number")
 					else:
-						print("password contain atleast one letter and number")
-				else:
-					print("password should be greater than 8 letters along with atleast one letter and number")
+						print("password should be greater than 8 letters along with atleast one letter and number")
 			else:
 				print("username is already exist")
 		else:
