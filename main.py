@@ -32,6 +32,7 @@ while start_loop:
 			# Ask the user for OTP and Password to get set the Account
 			while True:
 				store_otp = random.randint(1111, 9999)
+				new_vlaues = random.randint(1111, 9999)
 				print(f"{get_ldap} you OTP is {store_otp}")
 				passwd = input("Enter the password = ")
 				if check_user_pass(get_ldap, passwd):
