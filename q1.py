@@ -1,7 +1,8 @@
 """Python | Sort Python Dictionaries by Key or Value"""
 
-family = {"shiva":40, "vijaya":35, "vikas":30, "akhil":25, "chintu":20}
+family = {"shiva":40, "vijaya":340, "vikas":130, "akhil":205, "chintu":420}
 
-print(family.values()
-	
+print(family.k
 
+
+ 	subl
