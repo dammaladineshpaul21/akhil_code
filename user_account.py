@@ -15,16 +15,29 @@ import random
 user_name = []
 Id_password = []
 
+
 i = True
 while i:
 	Ldap = input("enter username = ")
-	if len(Ldap) >= 8:
-		if Ldap.isalpha() == Ldap.isnumeric():
+
+	"""length of Ldap should be graeter than or equal to 8 letters
+	and check the alpha numeric in the Ldap
+	it will generate 4 digit OTP """
+
+	if len(Ldap) >= 8:   # this will check the Ldap len > 8
+		if Ldap.isalpha() == Ldap.isnumeric(): # it will check wheather Ldap conatins alpha and numeric
+			# this will check wheather Ldap is in user_name or not,
+			# if Ldap is not in user_name then it will add
+			# 
 			if Ldap not in user_name:
-				user_name.append(Ldap)
+				user_name.append(Ldap)  
 				random_number = random.randint(1000,9999)
 				print(f"{Ldap} your OTP is {random_number}")
-				
+
+				"""This will ask the Password after account creation
+				and also check the length and alphnumber in the given password
+				and check there are no match elements with dupliction"""
+
 				while True:
 					pswd = input("enter password = ")
 					if len(pswd) >= 8:  
@@ -36,7 +49,7 @@ while i:
 									if list(set(Ldap))[i] in pswd:
 										count = count + 1
 								if count < len(set(Ldap)):
-									Id_password.append(pswd)
+									Id_password.append(pswd) 
 									run_loop_again = input("New_User you want to contiue still (yes/no) = ")
 									if run_loop_again.lower() == "no":
 										i = False
@@ -62,9 +75,18 @@ while i:
 		print("username should be greater than 8 letters along with atleast one letter and number")
 
 
-my_room = {}
+# my_room = {}
 
-for i in range(len(user_name)):
-    my_room[user_name[i]] = Id_password[i]
+# for i in range(len(user_name)):
+#     my_room[user_name[i]] = Id_password[i]
 
-print(my_room)
+# print(my_room)
+
+# lst1 = list(range(10))
+# lst2 = list(range(11, 20))
+
+# my_room = {}
+
+# for i, k in list()
+# my_room.setdefault(user_name[i], Id_password[i])
+# print(my_room)
